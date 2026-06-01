@@ -1,11 +1,18 @@
-const validarSenha = (senha) => senha.length >= 8;
-    
 const input = require('readline-sync');
-let senha = input.question("Digite a senha: ");
+let par = 0, impar = 0;
 
-if(validarSenha(senha)){
-    console.log("Senha válida")
+for(let i = 0; i < 10; i++){
+    const n = Number(input.question("Digite um numero: "));
+
+    if(n % 2 === 0){
+        // === compara o valor e tipo
+        // == converte para o mesmo tipo e compara o valor
+        par++;
+    }
+    else{
+        impar++;
+    }
+
 }
-else{
-    console.log("Senha inválida - Mínimo 8 caracteres")
-}
+
+console.log(`Quantidade de Pares: ${par}\nQuantidade de impares: ${impar}`);
